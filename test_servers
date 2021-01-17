@@ -1,0 +1,4 @@
+[test-servers]
+mac	ansible_host=192.168.0.110 ansible_user=vlad
+asus	ansible_host=192.168.0.109 ansible_user=vlad
+#ec2	ansible_host=18.196.121.219 ansible_user=ec2-user

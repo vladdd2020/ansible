@@ -1,0 +1,10 @@
+---
+# httpd deploy
+- hosts: all
+  become: yes
+  
+
+  roles:
+    - httpd
+    - php
+    - db

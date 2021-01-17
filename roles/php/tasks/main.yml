@@ -1,0 +1,15 @@
+---
+# tasks file for php
+- name: Install php packages
+  yum:
+    state: present
+    pkg:
+      - php
+      - php-gd
+      - php-mysql
+      - php-mbstring
+      - php-process
+      - php-xmlrpc
+      - php-xml
+      - libxslt
+      

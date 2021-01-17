@@ -1,0 +1,31 @@
+---
+# tasks file for httpd
+- name: Install Apache
+  yum: 
+    name=httpd 
+    state=present
+
+- name: Starting Apache
+  service:
+    name: httpd
+    state: started
+    enabled: true
+
+- name: Open port 80
+  firewalld:
+    service: http
+    permanent: true
+    state: enabled
+    immediate: yes
+
+- name: Open port 443
+  firewalld: 
+    service: https
+    permanent: true
+    state: enabled
+    immediate: yes
+
+- name: Restartig the firewalld
+  service:
+    name: firewalld
+    state: restarted
