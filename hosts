@@ -1,0 +1,4 @@
+[test]
+#mac	ansible_host=192.168.0.110 
+asus	ansible_host=192.168.0.110 
+#ec2	ansible_host=18.196.121.219 
