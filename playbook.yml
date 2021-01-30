@@ -1,0 +1,40 @@
+- name: test_pb
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: Add group
+    group:
+      name: test_user1
+      state: present
+
+
+  - name: Add the user 
+    user:
+      name: test_user1
+      shell: /bin/bash
+      group: test_user1
+      
+      
+
+  - name: Create a 2048-bit SSH keys
+    user:
+      name: test_user1
+      generate_ssh_key: yes
+      ssh_key_bits: 2048
+      ssh_key_file: .ssh/id_rsa
+
+
+  - name: Install docker
+    yum:
+      name:
+        - docker-ce
+        - docker-ce-cli 
+        - containerd.io
+      state: present
+
+  - name: Start docker
+    service:
+      name: docker
+      state: started
+
